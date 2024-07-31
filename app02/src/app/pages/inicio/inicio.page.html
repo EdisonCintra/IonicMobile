@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let dado of dadosCadastrados">
+    <ion-card-header>
+      <ion-card-title>Nome: {{ dado.nome }}</ion-card-title>
+    </ion-card-header>
+    <ion-button style="margin-left: 20px" color="success" (click)="editarItem(dado)">Editar</ion-button>
+    <ion-button style="margin-left: 10px" color="danger" (click)="alertExcluir(dado)">Excluir</ion-button>
+    <ion-button style="margin-left: 10px"  color="primary" routerLink="/vizualizar">Vizualizar</ion-button>
+
+    <ion-card-content>
+
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button routerLink="/cadastrar">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>
+
+
